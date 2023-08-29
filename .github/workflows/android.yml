@@ -33,3 +33,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assembleDebug
+
+    - name: Upload debug APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: launcher-debug.apk
+        path: launcher_app/build/outputs/apk/debug/launcher_app-debug.apk
